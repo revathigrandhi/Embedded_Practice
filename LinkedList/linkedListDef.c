@@ -122,25 +122,70 @@ void printMiddleNode ( SLL **head )
 
 void reverseList ( SLL **head )
 {
-
-
+    SLL* prev = NULL;
+    SLL* current = *head;
+    SLL* next = NULL;
+    while ( current != NULL) 
+    {
+        next = current->next;
+ 
+        current->next = prev;
+ 
+        // Move pointers one position ahead.
+        prev = current;
+        current = next;
+    }
+    *head = prev;
+    return;
 }
 
 
 void printOneFourthNode ( SLL **head )
 {
+    SLL* sptr = *head;
+    SLL* fptr = *head;
+    int cnt;
+    /** for verifying whether list has four nodes or not */
+    while ( sptr && cnt < 4 )
+    {
+        cnt++;
+        sptr=sptr->next;
+    }
 
+    if ( NULL == sptr )
+    {
+        printf("List is having less than  four nodes!!\n");
+        return;
+    }
 
+    sptr = *head; /* Assigning head ptr */
+    while( fptr && fptr->next && fptr->next->next )
+    {
+       fptr = fptr->next->next->next; 
+       
+    
+    }
 }
 
-void printThreeFourthNode ( SLL **head )
-{
-
-
-}
 
 void printBeforeLastNode ( SLL **head )
 {
+    SLL *temp = *head;
 
-
+    if( NULL == temp )
+    {
+        printf("The list is empty\n");
+    }
+    else if ( NULL == temp->next )
+    {
+       printf("The list has only one node!!!\n");
+    }
+    else
+    {
+        while( temp->next->next != NULL )
+	{
+	    temp = temp->next;
+	}
+        printf("the last but one node is: %d\n",temp->data );
+    }
 }

@@ -24,10 +24,8 @@ Display:
 	     4. Print the list\n\
 	     5. Find middle node\n\
 	     6. Reverse the Linked List\n\
-	     7. Find 1/4 th node\n\
-	     8. Find 3/4t node\n\
-	     9. Print before last node\n\
-	     10. Exit\n ");
+	     7. Print before last node\n\
+	     8. Exit\n ");
 
   scanf("%d",&choice);
 
@@ -56,16 +54,10 @@ Display:
       case 6: reverseList ( head );
 	      break;
 
-      case 7: printOneFourthNode ( head );
-	      break;
-  
-      case 8: printThreeFourthNode ( head );
+      case 7: printBeforeLastNode ( head );
 	      break;
 
-      case 9: printBeforeLastNode ( head );
-	      break;
-
-      case 10: exit(0);
+      case 8: exit(0);
   }
 
   goto Display;
